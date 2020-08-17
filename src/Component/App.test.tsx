@@ -39,7 +39,7 @@ describe('buttons displayed on the first page',()=>{
   })
   
 });
-describe('tringi',()=>{
+describe('Elements in Timer',()=>{
 
   let container:any;
   beforeEach(() => (container = mount(<Timer />)));
@@ -52,8 +52,8 @@ describe('tringi',()=>{
 
   })
  
-  it('btn clicked',()=>{
-    const onButtonClick =  fnclick;
+  it('btn Exits',()=>{
+    
 
     const container = shallow(<Timer></Timer>);
     expect(container.exists('.btn')).toEqual(true)
