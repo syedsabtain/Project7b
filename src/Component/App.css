@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.txt{
+
+  font-size: 13px;
+}
+.inp{
+  width: 50px !important;
+}
+.hd{
+  color:red;
+}
+@media only screen and (max-width: 320px) {
+  body {
+    width: 320px !important;
+  }
+}
+.bodyy{
+  background-image: url('./image3.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+  /* color: white; */
+}
+.cont{
+  background-color: rgba(255, 255, 255, 0.589);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  
+}
+.aa{
+  text-decoration: none;
+  color:black
+}
