@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
+
 const Timer = () => {
     
     let [countdown,
@@ -8,71 +9,77 @@ const Timer = () => {
         setIsontimer] = useState(false)
     let [counter,
         setCounter] = useState(0);
-
+        let [aa,
+            setAa] = useState < any > ();
     let [ison,
         setIson] = useState(false);
-    let [aa,
-        setAa] = useState < any > ();
+    
     let [selec,
         setSelec] = useState < number > (0);
 
     let [timer,
         setTimer] = useState({Days: 0, Hours: 0, Minutes: 0, Seconds: 0})
-
-    useEffect(() => {
-        if (ison === true) {
-            setAa(setInterval(() => {
-                setCounter(++counter);
-            }, 1000));
-        } else if (ison === false) {
-            clearInterval(aa);
+    function fntime(){
+        alert('stoped')
+        clearInterval(aa);
+        setIsontimer(false)
+    }
+    useEffect(()=>{
+        
+        if(isontimer)
+        {
+            if(countdown<=0)
+        {
+           fntime();
         }
-
-        if (isontimer === true) {
-            setAa(setInterval(() => {
-                if (countdown > 0) {
-                    setCountdown(--countdown);
-                } else {
-                    alert('Timer is Completed and its Stopped');
-                    clearInterval(aa);
-                    setIsontimer(false);
-                }
-            }, 1000));
-
-        } else if (isontimer === false) {
-            clearInterval(aa);
         }
-    }, [ison,isontimer])
+    })
 
     const handleclick = (id : number) => {
         if (id === 0) {
             setIson(true);
+            setAa(setInterval(() => {
+                setCounter(++counter);
+            }, 1000));
+         
            
         } else if (id === 1) {
             setIsontimer(true);
-          
+            setAa(setInterval(() => {
+                    setCountdown(--countdown);
+            }, 1000));
+            
         }
-
+        
     }
     const handlestop = (id : number) => {
 
         if (id === 0) {
             setIson(false);
+            clearInterval(aa);
+            
         } else if (id === 1) {
             setIsontimer(false);
+            clearInterval(aa);
+
 
         }
+        
     }
     const handlereset = (id : number) => {
 
         if (id === 0) {
             setCounter(0);
             setIson(false);
+            clearInterval(aa);
         } else if (id === 1) {
             setCountdown(60);
             setIsontimer(false);
+            clearInterval(aa);
         }
+        
     }
+    
     const handlechange = (e : React.ChangeEvent < HTMLSelectElement >) => {
         setSelec(parseInt(e.target.value));
         setIsontimer(false);
